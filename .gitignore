@@ -1,7 +1,7 @@
-# Import cache
+__pycache__
+*.pyc
+.DS_Store
+*~
+.idea
 .import/
-
-# Binaries
-bin/
-build/
-lib/
+logs/
