@@ -5,7 +5,7 @@
 [ext_resource path="res://tanks/Player.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 39.8671, 39.5291 )
+extents = Vector2( 30.4518, 27.2231 )
 
 [node name="Player" instance=ExtResource( 2 )]
 position = Vector2( 272.732, 83.9891 )
