@@ -5,7 +5,7 @@
 [ext_resource path="res://tanks/Player.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 30.4518, 27.2231 )
+extents = Vector2( 37.8429, 40.4102 )
 
 [node name="Player" instance=ExtResource( 2 )]
 position = Vector2( 272.732, 83.9891 )
@@ -26,7 +26,7 @@ region_enabled = true
 region_rect = Rect2( 308.66, 263.562, 79.2981, 81.7569 )
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2( -1.38785, -0.895351 )
+position = Vector2( -1.76111, -1.22796 )
 rotation = -0.0430617
 shape = SubResource( 1 )
 

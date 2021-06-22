@@ -6,7 +6,7 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -832.175, -575.938, 0, 0, 0, 0, -384.072, -576.103, 0, 0, 0, 0, -0.755402, -576.409, 0, 0, 0, 0, -0.522156, -958.799, 0, 0, 0, 0, -576.687, -958.799, 0, 0, 0, 0, -770.873, -769.103, 0, 0, 0, 0, -832.175, -575.938 )
+"points": PoolVector2Array( 52.1765, -38.9465, -52.1765, 38.9465, -852, -561, 156, -42, -156, 42, -384.072, -576.103, -0.841846, 111.966, 0.841846, -111.966, -0.755402, -576.409, 0, 0, 0, 0, -0.522156, -958.799, 0, 0, 0, 0, -576.687, -958.799, 0, 0, 0, 0, -770.873, -769.103, 0, 0, 0, 0, -851.5, -685.5, 0, 0, 0, 0, -852.011, -561.004 )
 }
 
 [sub_resource type="Curve2D" id=2]
@@ -35,12 +35,12 @@ limit_bottom = 1080
 curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D"]
-position = Vector2( -832.175, -575.938 )
-rotation = -0.000374859
+position = Vector2( -852, -561 )
+rotation = 2.25401
 
 [node name="Enemy" parent="Paths/Path2D/PathFollow2D" instance=ExtResource( 3 )]
 position = Vector2( 0, 0 )
-speed = 300
+speed = 100
 rotation_speed = 1.0
 
 [node name="Node2D" type="Node2D" parent="."]
@@ -50,6 +50,7 @@ curve = SubResource( 2 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Node2D/Path2D"]
 position = Vector2( -693.034, 702.881 )
-rotation = 0.0576606
+rotation = 0.0576916
 
 [node name="Enemy" parent="Node2D/Path2D/PathFollow2D" instance=ExtResource( 3 )]
+position = Vector2( 0.258728, 3.85229 )
