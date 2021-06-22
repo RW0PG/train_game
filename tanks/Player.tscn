@@ -8,8 +8,8 @@
 extents = Vector2( 39.8671, 39.5291 )
 
 [node name="Player" instance=ExtResource( 2 )]
-position = Vector2( 171.882, 215.564 )
-scale = Vector2( 1.5, 1.5 )
+position = Vector2( 272.732, 83.9891 )
+rotation = 0.0575959
 z_as_relative = false
 collision/safe_margin = 0.001
 script = ExtResource( 3 )
