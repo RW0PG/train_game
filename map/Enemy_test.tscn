@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/onlyObjects_retina_rotated.png" type="Texture" id=1]
+[ext_resource path="res://game_graphics/plants.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32.8069, 37.0848 )
+
+[node name="Enemy_test" type="KinematicBody2D"]
+
+[node name="Body" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0.249695, 186.733, 71.7503, 77.2669 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 1.12373, 0 )
+shape = SubResource( 1 )
+
+[node name="Plant" type="Sprite" parent="."]
+position = Vector2( 1.87289, -26.2204 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 230.241, 146.404, 30.1883, 66.7916 )
+
+[node name="Position2D" type="Position2D" parent="Plant"]
+
+[node name="GunTimer" type="Timer" parent="Plant"]

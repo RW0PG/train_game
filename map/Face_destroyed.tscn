@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://game_graphics/faces.png" type="Texture" id=1]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 70.9328
+height = 37.9539
+
+[node name="Face_destroyed" type="StaticBody2D"]
+
+[node name="Body" type="Sprite" parent="."]
+position = Vector2( 1.00136e-05, -3.57628e-06 )
+scale = Vector2( 3.24638, 3.07692 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 104.17, 15.4311, 69.4474, 78.0211 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 12.7568 )
+rotation = 0.785397
+shape = SubResource( 1 )

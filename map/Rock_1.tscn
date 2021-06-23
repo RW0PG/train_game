@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://game_graphics/rocks.png" type="Texture" id=1]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 50.9202
+height = 36.5101
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 18.3186
+height = 17.3672
+
+[node name="Rock_1" type="StaticBody2D"]
+
+[node name="Body" type="Sprite" parent="."]
+position = Vector2( 4.76837e-07, 2.38419e-06 )
+scale = Vector2( 2.38806, 2.82353 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 15.6518, 28.5889, 67.5264, 51.6379 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 3.87965, -10.3813 )
+rotation = -1.309
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( -42.0068, 34.9966 )
+rotation = -1.57079
+shape = SubResource( 2 )
