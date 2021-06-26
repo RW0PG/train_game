@@ -1,20 +1,25 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://assets/onlyObjects_retina_rotated.png" type="Texture" id=1]
+[ext_resource path="res://game_graphics/tanks_enemies_hulls.png" type="Texture" id=1]
 [ext_resource path="res://tanks/Tank.tscn" type="PackedScene" id=2]
 [ext_resource path="res://tanks/Player.gd" type="Script" id=3]
+[ext_resource path="res://game_graphics/plants_rotated.png" type="Texture" id=4]
+[ext_resource path="res://tanks/PlayerBullet.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 37.8429, 40.4102 )
 
 [node name="Player" instance=ExtResource( 2 )]
 position = Vector2( 272.732, 83.9891 )
-rotation = 0.0575959
+rotation = 0.037655
 z_as_relative = false
+collision_layer = 2
+collision_mask = 5
 collision/safe_margin = 0.001
 script = ExtResource( 3 )
-speed = 200
-rotation_speed = 2.0
+Bullet = ExtResource( 5 )
+speed = 100
+rotation_speed = 5.0
 gun_cooldown = 0.4
 health = 100
 
@@ -23,7 +28,7 @@ position = Vector2( -1.60327, -0.706829 )
 rotation = -0.0350595
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 308.66, 263.562, 79.2981, 81.7569 )
+region_rect = Rect2( 36.3303, 160.018, 89.6812, 85.2707 )
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2( -1.76111, -1.22796 )
@@ -31,13 +36,13 @@ rotation = -0.0430617
 shape = SubResource( 1 )
 
 [node name="Turret" parent="." index="2"]
-position = Vector2( -0.859261, -0.564251 )
-rotation = -0.0313902
-texture = ExtResource( 1 )
-offset = Vector2( 20, 0 )
+position = Vector2( -1.13707, -1.08578 )
+rotation = -0.0354351
+texture = ExtResource( 4 )
+offset = Vector2( 25, 0 )
 region_enabled = true
-region_rect = Rect2( 683.953, 14.1288, 60.6096, 23.9803 )
+region_rect = Rect2( 21.8064, 227.077, 65.7744, 38.727 )
 
 [node name="Muzzle" parent="Turret" index="0"]
-position = Vector2( 60, 0 )
-rotation = -1.56971
+position = Vector2( 68.1636, -2.3262 )
+rotation = -1.58494
