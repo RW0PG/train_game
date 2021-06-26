@@ -2,26 +2,28 @@
 
 [ext_resource path="res://tanks/Bullet.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game_graphics/plants.png" type="Texture" id=2]
-[ext_resource path="res://tanks/PlayerBullet.gd" type="Script" id=3]
+[ext_resource path="res://tanks/EnemyBullet.gd" type="Script" id=3]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 7.41959
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 6.64899
+height = 18.4447
 
-[node name="PlayerBullet" instance=ExtResource( 1 )]
-scale = Vector2( 2, 2 )
+[node name="EnemyBullet" instance=ExtResource( 1 )]
+scale = Vector2( 1.5, 1.5 )
 collision_layer = 8
-collision_mask = 4
+collision_mask = 2
 script = ExtResource( 3 )
 speed = 600
 damage = 10
 lifetime = 0.5
 
 [node name="Sprite" parent="." index="0"]
+rotation = -1.5708
 texture = ExtResource( 2 )
 region_enabled = true
-region_rect = Rect2( 133.393, 25.4979, 31.3138, 29.7738 )
+region_rect = Rect2( 70.997, 212.086, 23.8249, 32.8397 )
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2( -0.8909, -0.8909 )
-rotation = 2.66966
+position = Vector2( -0.793694, -0.793698 )
+rotation = 1.59109
 shape = SubResource( 1 )

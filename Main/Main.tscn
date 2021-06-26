@@ -7,12 +7,12 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 52.1765, -38.9465, -52.1765, 38.9465, -852, -561, 156, -42, -156, 42, -384.072, -576.103, -0.841846, 111.966, 0.841846, -111.966, -0.755402, -576.409, 0, 0, 0, 0, -0.522156, -958.799, 0, 0, 0, 0, -576.687, -958.799, 0, 0, 0, 0, -770.873, -769.103, 0, 0, 0, 0, -851.5, -685.5, 0, 0, 0, 0, -852.011, -561.004 )
+"points": PoolVector2Array( 52.1765, -38.9465, 0, 0, -852, -561, 0, 0, 0, 0, -852.011, -561.004 )
 }
 
 [sub_resource type="Curve2D" id=2]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -494.928, 506.093, -1.50771, -16.4993, 1.50771, 16.4993, -495.831, 630.314, -3.49977, 0.501636, 3.49977, -0.501636, -360.773, 632.372, 0, 0, 0, 0, -362.634, 504.924, 0, 0, 0, 0, -494.928, 506.093 )
+"points": PoolVector2Array( 0, 0, 0, 0, -503.464, 381.283, -1.50771, -16.4993, 1.50771, 16.4993, -495.831, 630.314, 0, 0, 0, 0, -495.187, 687.783, -3.49977, 0.501636, 3.49977, -0.501636, -341.38, 686.05, 0, 0, 0, 0, -339.67, 381.768, 0, 0, 0, 0, -504.73, 380.029 )
 }
 
 [node name="Main" type="Node2D"]
@@ -23,7 +23,6 @@ script = ExtResource( 4 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( -1489.28, 647.353 )
-speed = 180
 rotation_speed = 3.0
 
 [node name="Camera2D2" type="Camera2D" parent="Player"]
@@ -41,15 +40,15 @@ curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D"]
 position = Vector2( -852, -561 )
-rotation = 2.25401
+rotation = -2.79015
 
 [node name="Enemy" parent="Paths/Path2D/PathFollow2D" instance=ExtResource( 3 )]
-position = Vector2( 0, 0 )
-collision_layer = 1
-collision_mask = 1
-Bullet = null
-speed = 100
-rotation_speed = 1.0
+position = Vector2( -195.767, -39.4398 )
+rotation = 0.0589818
+max_speed = 100
+rotation_speed = 10.0
+gun_cooldown = 2.0
+turret_speed = 10.0
 
 [node name="Paths2" type="Node2D" parent="."]
 
@@ -59,13 +58,15 @@ curve = SubResource( 2 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Paths2/Path2D"]
 position = Vector2( -494.928, 506.093 )
-rotation = 1.59243
+rotation = 1.59242
 
 [node name="Enemy" parent="Paths2/Path2D/PathFollow2D" instance=ExtResource( 3 )]
 position = Vector2( 122.601, -7.39713 )
-collision_layer = 1
-collision_mask = 1
-Bullet = null
-rotation_speed = 2.0
+max_speed = 100
+rotation_speed = 10.0
+gun_cooldown = 2.0
+turret_speed = 10.0
 
 [connection signal="shoot" from="Player" to="." method="_on_Tank_shoot"]
+[connection signal="shoot" from="Paths/Path2D/PathFollow2D/Enemy" to="." method="_on_Tank_shoot"]
+[connection signal="shoot" from="Paths2/Path2D/PathFollow2D/Enemy" to="." method="_on_Tank_shoot"]

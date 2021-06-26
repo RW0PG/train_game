@@ -5,7 +5,7 @@ signal dead
 signal shoot
 
 export (PackedScene) var Bullet
-export (int) var speed
+export (int) var max_speed
 export (float) var rotation_speed
 export (float) var gun_cooldown
 export (int) var health
@@ -13,7 +13,6 @@ export (int) var health
 var velocity = Vector2()
 var can_shoot = true
 var alive = true
-
 
 
 func _ready():
