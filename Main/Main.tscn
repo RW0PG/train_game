@@ -59,7 +59,7 @@ curve = SubResource( 2 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Paths2/Path2D"]
 position = Vector2( -503.464, 381.283 )
-rotation = 1.54434
+rotation = 1.54435
 
 [node name="Enemy" parent="Paths2/Path2D/PathFollow2D" instance=ExtResource( 3 )]
 position = Vector2( 122.601, -7.39713 )
