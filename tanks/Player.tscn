@@ -21,7 +21,7 @@ Bullet = ExtResource( 5 )
 max_speed = 400
 rotation_speed = 5.0
 gun_cooldown = 0.4
-health = 100
+max_health = 100
 
 [node name="Body" parent="." index="0"]
 position = Vector2( -1.60327, -0.706829 )

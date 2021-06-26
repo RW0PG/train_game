@@ -13,6 +13,7 @@ script = ExtResource( 2 )
 Bullet = ExtResource( 3 )
 max_speed = 150
 gun_cooldown = 1.0
+max_health = 50
 turret_speed = 1.0
 detect_radius = 300
 
