@@ -38,7 +38,12 @@ func take_damage(amount):
 		explode()
 
 func explode():
-	queue_free()
+	$CollisionShape2D.disabled = true
+	alive = false
+	$Turret.hide()
+	$Body.hide()
+	$Explosion.show()
+	$Explosion.play()
 
 func _physics_process(delta):
 		if not alive:
@@ -49,3 +54,8 @@ func _physics_process(delta):
 
 func _on_GunTimer_timeout():
 	can_shoot = true
+
+
+func _on_Explosion_animation_finished():
+	queue_free()
+
