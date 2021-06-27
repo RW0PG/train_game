@@ -69,7 +69,7 @@ position = Vector2( 1365.44, 481 )
 position = Vector2( 964.432, -525.129 )
 
 [node name="Tree_trunk_3" parent="obstacles" instance=ExtResource( 5 )]
-position = Vector2( -928, -584 )
+position = Vector2( -1355.18, -466.274 )
 
 [node name="Train_station" parent="obstacles" instance=ExtResource( 6 )]
 position = Vector2( 585.38, 232.352 )
@@ -81,16 +81,16 @@ position = Vector2( -1464, -920 )
 position = Vector2( -1512, -272 )
 
 [node name="tree_6" parent="obstacles" instance=ExtResource( 4 )]
-position = Vector2( -1464, -728 )
+position = Vector2( -1527.91, -680.91 )
 
 [node name="tree_4" parent="obstacles" instance=ExtResource( 4 )]
-position = Vector2( -1192, -928 )
+position = Vector2( -1212.18, -1099.54 )
 
 [node name="tree_5" parent="obstacles" instance=ExtResource( 4 )]
 position = Vector2( -1864, -912 )
 
 [node name="tree_3" parent="obstacles" instance=ExtResource( 4 )]
-position = Vector2( -752, -984 )
+position = Vector2( -1182.54, -674.55 )
 
 [node name="tree_2" parent="obstacles" instance=ExtResource( 4 )]
 position = Vector2( -1824, -584 )
@@ -99,27 +99,27 @@ position = Vector2( -1824, -584 )
 position = Vector2( -1768, -192 )
 
 [node name="pickup_node" type="Node2D" parent="."]
-position = Vector2( -637.229, 163.026 )
+position = Vector2( -570.487, 779.722 )
 
 [node name="Pickup" parent="pickup_node" instance=ExtResource( 14 )]
 position = Vector2( 0.304413, 0.229782 )
 
 [node name="pickup_node2" type="Node2D" parent="."]
-position = Vector2( -404.241, 73.6023 )
+position = Vector2( -1205.9, -460.357 )
 
 [node name="Pickup2" parent="pickup_node2" instance=ExtResource( 14 )]
 position = Vector2( -0.00250244, -0.451584 )
 type = 1
 
 [node name="pickup_node3" type="Node2D" parent="."]
-position = Vector2( -192.102, 78.0502 )
+position = Vector2( 1239.73, 62.1762 )
 
 [node name="Pickup3" parent="pickup_node3" instance=ExtResource( 14 )]
 position = Vector2( 0.729584, 0.938034 )
 type = 2
 
 [node name="pickup_node4" type="Node2D" parent="."]
-position = Vector2( -58.2607, 263.417 )
+position = Vector2( 1794.64, -1005.01 )
 
 [node name="Pickup4" parent="pickup_node4" instance=ExtResource( 14 )]
 position = Vector2( -0.529236, -0.412674 )

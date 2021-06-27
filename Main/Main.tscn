@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://tanks/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://map/Map.tscn" type="PackedScene" id=2]
@@ -8,12 +8,22 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 52.1765, -38.9465, 0, 0, -852, -561, 0, 0, 0, 0, -852.011, -561.004 )
+"points": PoolVector2Array( 96.6168, -41.1147, -96.6168, 41.1147, -507.253, 44.1545, -23.1355, 0.516291, 23.1355, -0.516291, -507.766, 300.377, -13.6677, 3.06811, 13.6677, -3.06811, 6.72711, 501.507, -15.8189, 42.1228, 15.8189, -42.1228, 200.428, 502.781, 0.525944, 111.124, -0.525944, -111.124, 200.341, 44.0387, 0, 0, 0, 0, -507.253, 44.1545 )
 }
 
 [sub_resource type="Curve2D" id=2]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -503.464, 381.283, -1.50771, -16.4993, 1.50771, 16.4993, -495.831, 630.314, 0, 0, 0, 0, -495.187, 687.783, -3.49977, 0.501636, 3.49977, -0.501636, -341.38, 686.05, 0, 0, 0, 0, -339.67, 381.768, 0, 0, 0, 0, -504.73, 380.029 )
+"points": PoolVector2Array( 22.7535, 5.12645, -22.7535, -5.12645, -282.197, 66.5442, -1.38077, 1.44688, 1.38077, -1.44688, -206.072, 705.304, -6.95719, -25.3001, 6.95719, 25.3001, -69.3712, 1147.81, -8.5656, -3.33625, 8.5656, 3.33625, -61.3341, 1277.66, -12.1865, -37.202, 12.1865, 37.202, 5.64012, 1404.13, -9.51293, 46.9042, 9.51293, -46.9042, 132.582, 1400.16, 0, 0, 0, 0, 90.179, -456.359, 40.43, 35.1271, -40.43, -35.1271, 81.1348, -776.106, 13.8904, -10.9342, -13.8904, 10.9342, -111.66, -772.658, 0, 0, 0, 0, -166.221, -386.693, 0, 0, 0, 0, -282.197, 66.5442 )
+}
+
+[sub_resource type="Curve2D" id=3]
+_data = {
+"points": PoolVector2Array( 0.974353, 0.437335, -0.974353, -0.437335, 52.86, 4.09241, -6.71995, -0.498531, 6.71995, 0.498531, 726.011, 1.44147, 8.39429, -0.570066, -8.39429, 0.570066, 726.25, 13.0189, 7.16272, 0.673214, -7.16272, -0.673214, 53.0255, 20.8904, -7.42998, -1.1139, 7.42998, 1.1139, 52.86, 4.09241 )
+}
+
+[sub_resource type="Curve2D" id=4]
+_data = {
+"points": PoolVector2Array( 63.0718, -38.6076, -63.0718, 38.6076, 1118.76, -250.853, 110.361, -23.686, -110.361, 23.686, 351.94, 6.18286, 107.899, 20.8711, -107.899, -20.8711, 163.39, 11.5652, -169.05, 47.1274, 169.05, -47.1274, 159.02, -437.404, -92.6777, -4.90681, 92.6777, 4.90681, 2718.24, -442.782, 172.637, 5.4826, -172.637, -5.4826, 2706.21, -286.509, 0, 0, 0, 0, 1118.76, -250.853 )
 }
 
 [node name="Main" type="Node2D"]
@@ -24,7 +34,9 @@ script = ExtResource( 4 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( -1489.28, 647.353 )
+max_speed = 250
 rotation_speed = 3.0
+gun_cooldown = 0.6
 
 [node name="Camera2D2" type="Camera2D" parent="Player"]
 current = true
@@ -35,43 +47,89 @@ limit_right = 1920
 limit_bottom = 1080
 
 [node name="Paths" type="Node2D" parent="."]
+position = Vector2( -573.469, 109.503 )
 
 [node name="Path2D" type="Path2D" parent="Paths"]
+position = Vector2( 125.924, 134.176 )
 curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D"]
-position = Vector2( -852, -561 )
-rotation = -2.79015
+position = Vector2( -507.253, 44.1545 )
+rotation = 2.71017
 
 [node name="Enemy" parent="Paths/Path2D/PathFollow2D" instance=ExtResource( 3 )]
-position = Vector2( -195.767, -39.4398 )
-rotation = 0.0589818
-max_speed = 100
-rotation_speed = 10.0
-gun_cooldown = 2.0
-turret_speed = 10.0
+position = Vector2( -7.68782, 6.64807 )
+max_health = 75
+turret_speed = 5.0
+detect_radius = 250
 
 [node name="Paths2" type="Node2D" parent="."]
+position = Vector2( -38.3698, -203.29 )
+rotation = -1.55215
 
 [node name="Path2D" type="Path2D" parent="Paths2"]
-position = Vector2( -20.7634, 3.78519 )
+position = Vector2( 0.415619, 1.56592 )
 curve = SubResource( 2 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Paths2/Path2D"]
-position = Vector2( -503.464, 381.283 )
-rotation = 1.54435
+position = Vector2( -282.197, 66.5442 )
+rotation = 2.1517
 
 [node name="Enemy" parent="Paths2/Path2D/PathFollow2D" instance=ExtResource( 3 )]
-position = Vector2( 122.601, -7.39713 )
-max_speed = 100
-rotation_speed = 10.0
-gun_cooldown = 2.0
-turret_speed = 10.0
+position = Vector2( 57.859, 267.942 )
+max_speed = 175
+gun_cooldown = 0.75
+max_health = 125
+turret_speed = 5.0
+detect_radius = 125
 
 [node name="HUD" parent="." instance=ExtResource( 5 )]
+
+[node name="Path3" type="Node2D" parent="."]
+position = Vector2( 45.3069, 745.415 )
+
+[node name="Path2D" type="Path2D" parent="Path3"]
+curve = SubResource( 3 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path3/Path2D"]
+position = Vector2( 52.86, 4.09241 )
+rotation = -0.017631
+
+[node name="Enemy" parent="Path3/Path2D/PathFollow2D" instance=ExtResource( 3 )]
+position = Vector2( -0.658195, -0.329823 )
+gun_cooldown = 0.5
+max_health = 100
+turret_speed = 5.0
+detect_radius = 250
+
+[node name="Path4" type="Node2D" parent="."]
+position = Vector2( -970.377, -469.452 )
+
+[node name="Path2D" type="Path2D" parent="Path4"]
+position = Vector2( -49.9166, -20.8765 )
+curve = SubResource( 4 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path4/Path2D"]
+position = Vector2( 1118.76, -250.853 )
+rotation = 2.62225
+
+[node name="Enemy" parent="Path4/Path2D/PathFollow2D" instance=ExtResource( 3 )]
+position = Vector2( -1.22516, -1.32123 )
+scale = Vector2( 1, 1 )
+max_speed = 175
+gun_cooldown = 0.2
+max_health = 70
+turret_speed = 5.0
+detect_radius = 125
 
 [connection signal="dead" from="Player" to="." method="_on_Player_dead"]
 [connection signal="health_changed" from="Player" to="HUD" method="update_healthbar"]
 [connection signal="shoot" from="Player" to="." method="_on_Tank_shoot"]
+[connection signal="dead" from="Paths/Path2D/PathFollow2D/Enemy" to="." method="_on_Enemy_dead"]
 [connection signal="shoot" from="Paths/Path2D/PathFollow2D/Enemy" to="." method="_on_Tank_shoot"]
+[connection signal="dead" from="Paths2/Path2D/PathFollow2D/Enemy" to="." method="_on_Enemy_dead"]
 [connection signal="shoot" from="Paths2/Path2D/PathFollow2D/Enemy" to="." method="_on_Tank_shoot"]
+[connection signal="dead" from="Path3/Path2D/PathFollow2D/Enemy" to="." method="_on_Enemy_dead"]
+[connection signal="shoot" from="Path3/Path2D/PathFollow2D/Enemy" to="." method="_on_Tank_shoot"]
+[connection signal="dead" from="Path4/Path2D/PathFollow2D/Enemy" to="." method="_on_Enemy_dead"]
+[connection signal="shoot" from="Path4/Path2D/PathFollow2D/Enemy" to="." method="_on_Tank_shoot"]

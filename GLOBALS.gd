@@ -14,3 +14,5 @@ func next_level():
 		get_tree().change_scene(levels[current_level])
 	else:
 		restart()
+
+	
