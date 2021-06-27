@@ -21,8 +21,12 @@ _global_script_class_icons={
 [application]
 
 config/name="Projekt"
-run/main_scene="res://tanks/Player.tscn"
+run/main_scene="res://Titlescreen/TitleScreen.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Globals="*res://GLOBALS.gd"
 
 [display]
 
