@@ -1,0 +1,120 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/KungFuMasterTwotoneItalic-Yzv42.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://game_graphics/game_map_3840.png" type="Texture" id=2]
+[ext_resource path="res://enemies/Enemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Titlescreen/TitleScreen.gd" type="Script" id=4]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -236.79, 463.208, 0, 0, 0, 0, -236.79, 463.208, 0, 0, 0, 0, 496.5, 463.75, 0, 0, 0, 0, 495.806, -275.289 )
+}
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 987.967, 463.047, 0, 0, 0, 0, 496.823, 463.642, 0, 0, 0, 0, 496, -276.25 )
+}
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "Napis "
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 381.265, 445.207 ), Vector2( 381.265, 415 ), Vector2( 381.265, 445.207 ) ]
+}
+
+[sub_resource type="DynamicFont" id=5]
+size = 250
+font_data = ExtResource( 1 )
+
+[node name="TitleScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0.305882, 0.305882, 0.305882, 1 )
+light_mask = 0
+position = Vector2( 563.048, 206.688 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 2 )
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2( -236.79, 463.208 )
+rotation = 0.000729556
+
+[node name="Enemy" parent="Path2D/PathFollow2D" instance=ExtResource( 3 )]
+position = Vector2( 128.946, -2.30972 )
+rotation = 0.0605894
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Path2D2" type="Path2D" parent="."]
+curve = SubResource( 2 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D2"]
+position = Vector2( 987.967, 463.047 )
+rotation = 3.14039
+
+[node name="Enemy" parent="Path2D2/PathFollow2D" instance=ExtResource( 3 )]
+position = Vector2( 945.014, 461.691 )
+rotation = 0.0635223
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Space" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -130.735
+margin_top = 145.207
+margin_right = 145.265
+margin_bottom = 178.207
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 5
+custom_constants/shadow_offset_y = 5
+text = "Press space to play "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Space"]
+autoplay = "Napis "
+"anims/Napis " = SubResource( 4 )
+
+[node name="Title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -437.593
+margin_top = -261.315
+margin_right = 409.407
+margin_bottom = 241.685
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 5
+custom_constants/shadow_offset_y = 5
+text = "P.U.T.A.S
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
