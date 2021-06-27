@@ -13,11 +13,12 @@
 [ext_resource path="res://map/Rock_3.tscn" type="PackedScene" id=11]
 [ext_resource path="res://map/Rock_1.tscn" type="PackedScene" id=12]
 [ext_resource path="res://map/Rock_2.tscn" type="PackedScene" id=13]
-[ext_resource path="res://UI/Pickup_95.tscn" type="PackedScene" id=14]
+[ext_resource path="res://UI/Pickup.tscn" type="PackedScene" id=14]
 
 [node name="Map" type="Node2D"]
 
 [node name="main_map" type="Sprite" parent="."]
+position = Vector2( -0.704834, 0 )
 texture = ExtResource( 1 )
 
 [node name="wall_bot_1" parent="." instance=ExtResource( 3 )]
@@ -97,7 +98,29 @@ position = Vector2( -1824, -584 )
 [node name="tree_1" parent="obstacles" instance=ExtResource( 4 )]
 position = Vector2( -1768, -192 )
 
-[node name="pickups" type="Node2D" parent="."]
+[node name="pickup_node" type="Node2D" parent="."]
+position = Vector2( -637.229, 163.026 )
 
-[node name="Pickup" parent="pickups" instance=ExtResource( 14 )]
-position = Vector2( -1065.16, 648.431 )
+[node name="Pickup" parent="pickup_node" instance=ExtResource( 14 )]
+position = Vector2( 0.304413, 0.229782 )
+
+[node name="pickup_node2" type="Node2D" parent="."]
+position = Vector2( -404.241, 73.6023 )
+
+[node name="Pickup2" parent="pickup_node2" instance=ExtResource( 14 )]
+position = Vector2( -0.00250244, -0.451584 )
+type = 1
+
+[node name="pickup_node3" type="Node2D" parent="."]
+position = Vector2( -192.102, 78.0502 )
+
+[node name="Pickup3" parent="pickup_node3" instance=ExtResource( 14 )]
+position = Vector2( 0.729584, 0.938034 )
+type = 2
+
+[node name="pickup_node4" type="Node2D" parent="."]
+position = Vector2( -58.2607, 263.417 )
+
+[node name="Pickup4" parent="pickup_node4" instance=ExtResource( 14 )]
+position = Vector2( -0.529236, -0.412674 )
+type = 3
