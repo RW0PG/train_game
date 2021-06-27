@@ -33,7 +33,7 @@ script = ExtResource( 4 )
 [node name="Map" parent="." instance=ExtResource( 2 )]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -1489.28, 647.353 )
+position = Vector2( -1568.38, 704.875 )
 max_speed = 250
 rotation_speed = 3.0
 gun_cooldown = 0.6
